@@ -8,49 +8,55 @@ y responder a las siguientes cuestiones.
  hasta 3 variables. ¿Podrías decirnos cuál sería el valor de todas ellas al 
  finalizar la ejecución del script?
  
-rgb = {
-    red: "#FF0000",
-    green: "#00FF00",
-    blue: "#0000FF",
-    white: "#FFFFFF",
-    black: "#000000",
-};
+ Resultado de la ejecución:
+ ```
+  rgb = {
+      red: "#FF0000",
+      green: "#00FF00",
+      blue: "#0000FF",
+      white: "#FFFFFF",
+      black: "#000000",
+  };
 
-wb = {
-    white: "#FFFFFF",
-    black: "#000000"
-};
+  wb = {
+      white: "#FFFFFF",
+      black: "#000000"
+  };
 
-colors = rgb = {
-    red: "#FF0000",
-    green: "#00FF00",
-    blue: "#0000FF",
-    white: "#FFFFFF",
-    black: "#000000",
-};
+  colors = rgb = {
+      red: "#FF0000",
+      green: "#00FF00",
+      blue: "#0000FF",
+      white: "#FFFFFF",
+      black: "#000000",
+  };
+```
 
 2. Modifica el código para que las variables `rgb` y `wb` mantengan sus valores 
 iniciales y `colors` tenga los valores de ambas al finalizar la ejecución del 
 script.
-
-var rgb = {
+Solución propuesta:
+```
+const rgb = {
     red: "#FF0000",
     green: "#00FF00",
     blue: "#0000FF"
 };
 
-var wb = {
+const wb = {
     white: "#FFFFFF",
     black: "#000000"
 };
 
-var colors = [].concat(rgb, wb);
+const colors = [].concat(rgb, wb);
+```
 
 3. Además, tenemos un bug localizado en dispositivos con Internet Explorer… 
 El código de nuestro script no funciona y necesitamos que se ejecute también 
 en este navegador. ¿Sabrías identificar cuál es el problema? ¿Qué solución nos
  propones?
-El problema está en que Object.assign no soportado en internet explorer. (Documentación: https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/Object/assign)
-El código anterior lo solucionaría al ser un método soportado en todos los navegadores (Documentación: https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/Array/concat)
+ 
+El problema está en que ```Object.assign``` no soportado en internet explorer. (Documentación: https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/Object/assign)
+El código anterior lo solucionaría al ser ```Array.prototype.concat``` un método soportado en todos los navegadores (Documentación: https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/Array/concat)
 
 **PS**: No es estrictamente necesario tener Internet Explorer para poder identificar y/o resolver el bug. 
