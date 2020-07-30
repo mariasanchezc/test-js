@@ -7,8 +7,8 @@ nos devuelve el código es el mismo valor en cada iteración.
 1. Sin necesidad de ejecutar el código, ¿sabrías decirnos qué valor imprimiría
  por consola el script? ¿Cuál es el motivo?
  
- Siempre se va a implirmir el último valor del bucle for, en este caso 5. y de
- forma simultánea a los 1000 ms.
+ Se imprimirá 5 veces el último valor del bucle for, en este caso 5, de
+ forma simultánea a los 1000 ms aprox.
  
  El bucle for se ejecuta de forma sícrona y, por tanto, llama a setTimeout 5 veces
  de forma casi consecutiva. Cuando esos 1000ms se vencen se pintarán en consola 5 
@@ -26,13 +26,15 @@ nos devuelve el código es el mismo valor en cada iteración.
 ```
 
 Con otro par de funciones propia de JavaScript, setInterval y clearInterval
-let i = 0;
-const setLog = () => {
-  console.log(i);
-  i++;
-};
-const interval = setInterval(setLog, 1000);
+```
+    let i = 0;
+    const setLog = () => {
+      console.log(i);
+      i++;
+    };
+    const interval = setInterval(setLog, 1000);
 
-setTimeout(() => {
-  clearInterval(interval);
-}, 5000);
+    setTimeout(() => {
+      clearInterval(interval);
+    }, 5000);
+```
