@@ -36,5 +36,5 @@ Con otro par de funciones propia de JavaScript, setInterval y clearInterval
 
     setTimeout(() => {
       clearInterval(interval);
-    }, 5000);
+    }, 5500);
 ```

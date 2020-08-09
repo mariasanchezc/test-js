@@ -1,3 +1,4 @@
+import Promise from 'promise-polyfill';
 let promise = new Promise((resolve, reject) => {
     setTimeout(function () {
         if (Math.round(Math.random()) === 1) {

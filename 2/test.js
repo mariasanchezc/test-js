@@ -1,5 +1,10 @@
-for (var i = 0; i < 5; i++) {
-    setTimeout(function () {
-        console.log(i);
-    }, 1000)
-}
+let i = 0;
+const setLog = () => {
+    console.log(i);
+    i++;
+};
+const interval = setInterval(setLog, 1000);
+
+setTimeout(() => {
+    clearInterval(interval);
+}, 5500);
